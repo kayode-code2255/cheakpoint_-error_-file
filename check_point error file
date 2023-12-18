@@ -1,0 +1,64 @@
+mylist = [14, "hello", 967]
+try:
+    print(mylist[6])
+except IndexError:
+    print('Index out of range')  # The error is handled for index out of range
+
+try:
+    import pandas  # Corrected the module names to lowercase
+    import numpy   # Corrected the module names to lowercase
+except ModuleNotFoundError:
+    print('No module named Pandas')
+
+try:
+    eval("python error")  # Changed to 'eval' to execute the string as code
+except SyntaxError:
+    print("Invalid syntax")
+
+mydictionary = {True: "hello", False: "bye", '3': "python"}
+try:
+    print(mydictionary['True'])  # Accessing the key 'True' (boolean) not 'True' (string)
+except KeyError:
+    print("No key with the value 'True'")
+
+i = 14
+while i < 78:
+    print(i)
+    i += 1
+# Corrected indentation; the loop needs to increment 'i' within the loop body
+
+try:
+    i = 14
+    while i < 78:
+        print(i)
+        i += 1
+except IndentationError:
+    print("Expected an indented block")  # Handling the expected indentation error
+
+it = iter([1, 2, 3])
+try:
+    for _ in range(5):
+        print(next(it))
+except StopIteration:
+    print('Stop Iteration')  # Caught the StopIteration error when exceeding available elements
+
+try:
+    '15' + str(15)  # Converted the integer to a string for concatenation
+except TypeError:
+    print("Cannot concatenate 'str' and 'int' objects")
+
+try:
+    int('python')  # Tried to convert a string that isn't an integer
+except ValueError:
+    print("Invalid literal for int() with base 10: 'python'")
+
+try:
+    print('python')  # No error in this line
+except NameError:
+    print("Name 'python' is not defined")
+
+try:
+    x = 19 / 0  # Division by zero error
+except ZeroDivisionError:
+    print("Integer division or modulo by zero")
+ 
